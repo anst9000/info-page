@@ -34,10 +34,18 @@ body,
   position: relative;
 }
 
-input[type="text"] {
+h1 {
   position: absolute;
-  top: 20%;
+  top: 7%;
+}
 
+.input-container {
+  position: absolute;
+  top: 15%;
+}
+/* position: relative; */
+
+.input-container input[type="text"] {
   width: 25rem;
   border: 4px solid #00ff66;
   background-color: black;
@@ -47,19 +55,44 @@ input[type="text"] {
   border-radius: 10px;
 }
 
-input[type="text"]:active,
-input[type="text"]:focus {
+.input-container input[type="text"]:active,
+.input-container input[type="text"]:focus {
   border: 4px solid #00ff66;
   outline: none !important;
   box-shadow: 0 0 10px #719ece;
 }
 
-input[type="text"]::placeholder {
+.input-container input[type="text"]::placeholder {
   color: rgba(0, 255, 102, 0.25);
   opacity: 1; /* Firefox */
 }
 
+/* Style the input field */
+/* .input-container input {
+  width: 100%;
+} */
+
+/* Style the clear button */
+.input-container .clear-btn {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #888;
+}
+
+/* Change button color on hover */
+.input-container .clear-btn:hover {
+  color: #ccc;
+  scale: 101%;
+}
+
 .search-result {
+  margin: 0 10rem;
   position: absolute;
   top: 35%;
 }
@@ -91,10 +124,12 @@ ul li:hover {
 }
 
 .instruction {
+  position: relative;
+  margin: 0 auto;
   border: 2px solid #00ff66;
-  min-width: 350px;
+  width: 100%;
   border-radius: 15px;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 
 .instruction-header {
@@ -102,7 +137,28 @@ ul li:hover {
 }
 
 .instruction-body {
+  width: 90%;
   margin-bottom: 2rem;
+  white-space: pre-line;
+}
+
+.instruction-body-partial {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.instruction-body-partial span {
+  background: #00ff66;
+  color: black;
+  width: fit-content;
+  padding: 0.2rem 0.5rem 0.1rem;
+  border-radius: 0.15rem;
+  margin-bottom: 0.2rem;
+}
+.instruction-body-partial div {
+  display: inline-block;
+  color: #00ff66;
+  background: black;
 }
 
 .instruction-footer {
@@ -118,6 +174,9 @@ ul li:hover {
 }
 
 button.instruction-close {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
   color: #00ff66;
   background-color: black;
   font-weight: bold;
