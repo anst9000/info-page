@@ -32,6 +32,7 @@ body,
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow-y: auto;
 }
 
 h1 {
@@ -99,6 +100,12 @@ h1 {
 
 .search-result p {
   font-size: 1.25rem;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  gap: 20px; /* Adds spacing between columns */
 }
 
 ul li {
